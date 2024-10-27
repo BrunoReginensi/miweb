@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Información de Vuelos</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Información de Vuelos</h1>
-            <form id="vueloForm">
-                <input type="text" id="codigo" placeholder="Código de Vuelo" required>
-                <input type="text" id="origen" placeholder="Origen" required>
-                <input type="text" id="destino" placeholder="Destino" required>
-                <input type="time" id="horaSalida" required>
-                <button type="submit">Agregar Vuelo</button>
-            </form>
-            <ul id="listaVuelos"></ul>
-        </div>
-        <script src="script.js"></script>
-    </body>
-    </html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Bruno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Elige tu lugar de ensueño</h1>
+        <form id="vueloForm">
+            <input type="text" id="origen" placeholder="Origen" required>
+            <input type="text" id="destino" placeholder="Destino" required>
+            <input type="text" id="precio" placeholder="Precio" required>
+            <input type="date" id="fecha" required>
+            <button type="submit">Agregar Vuelo</button>
+        </form>
+        <h2>Lista de Vuelos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Precio</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="vueloBody">
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

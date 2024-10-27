@@ -1,17 +1,27 @@
-document.getElementById('vueloForm').addEventListener('submit', function(e) {
+document.getElementById("vueloForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const codigo = document.getElementById('codigo').value;
-    const origen = document.getElementById('origen').value;
-    const destino = document.getElementById('destino').value;
-    const horaSalida = document.getElementById('horaSalida').value;
+    const origen = document.getElementById("origen").value;
+    const destino = document.getElementById("destino").value;
+    const precio = document.getElementById("precio").value;
+    const fecha = document.getElementById("fecha").value;
 
-    const listaVuelos = document.getElementById('listaVuelos');
-    const nuevoVuelo = document.createElement('li');
-    
-    nuevoVuelo.textContent = `Código: ${codigo}, Origen: ${origen}, Destino: ${destino}, Hora de Salida: ${horaSalida}`;
-    listaVuelos.appendChild(nuevoVuelo);
+    const vueloBody = document.getElementById("vueloBody2");
+    const fila = document.createElement("tr");
 
-    // Limpiar el formulario
+    fila.innerHTML = `
+        <td>${origen}</td>
+        <td>${destino}</td>
+        <td>${precio}</td>
+        <td>${fecha}</td>
+        <td><button class="delete-button">Eliminar</button></td>`;
+
+    fila.querySelector(".delete-button").addEventListener("click", function() {
+        vueloBody.removeChild(fila);
+    });
+
+    vueloBody.appendChild(fila);
     this.reset();
 });
+
+
